@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">Rhythm<span class="text-blue-500">Reach</span></a>
+      <ul class="flex space-x-4">
+        <li><a href="#" class="hover:text-blue-500">Home</a></li>
+        <li><a href="/map-register" class="hover:text-blue-500">Register</a></li>
+        <li><a href="/map-login" class="hover:text-blue-500">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-900 text-white h-screen flex items-center">
+    <div class="container mx-auto text-center">
+        <img src="" th:src="@{/images/logo_tb.jpg}" style="width:600px;height:350px;margin-left:450px;margin-top: -50px;"/>
+        <br>
+      <h1 class="text-5xl font-extrabold mb-4">Discover Your Favorite Music</h1>
+      <p class="text-lg mb-8">Explore a wide range of genres and artists</p>
+      <a href="/map-register" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">Get Started</a>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 RhythmReach. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

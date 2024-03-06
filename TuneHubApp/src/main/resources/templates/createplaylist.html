@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Create Playlist</title>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4 text-white flex justify-between w-full">
+    <ul class="flex">
+      <li class="mr-6"><a href="/map-songs">Add Songs</a></li>
+      <li class="mr-6"><a href="/map-viewsongs">View Songs</a></li>
+      <li class="mr-6"><a href="/createplaylist">Create Playlist</a></li>
+      <li><a href="/viewPlaylists">View Playlist</a></li>
+    </ul>
+    <a href="/map-login" class="text-white">Logout</a>
+  </nav>
+<br>
+<!-- Playlist Form -->
+<div class="container mx-auto mt-8 p-4 bg-white rounded shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Create New Playlist</h2>
+
+    <form action="/addplaylist" method="post">
+        <!-- Playlist Name Input -->
+        <div class="mb-4">
+            <label for="playlistName" class="block text-sm font-semibold text-gray-600">Playlist Name:</label>
+            <input type="text" id="playlistName" name="name" class="w-full p-2 border border-gray-300 rounded">
+        </div>
+
+        <!-- Available Songs with Checkboxes -->
+        <div class="mb-4">
+            <label class="block text-sm font-semibold text-gray-600">Available Songs:</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Iterate over your song list using Thymeleaf -->
+                <div th:each="song : ${songslist}">
+                   
+                        <input type="checkbox" th:name="songs" th:value="${song.id}" class="text-blue-500">
+                        <label th:text="${song.name}" class="font-bold "></label>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" class="bg-blue-500 text-white py-2 px-4 rounded" value="ADD PLAYLIST"/>
+    </form>
+</div>
+
+</body>
+</html>

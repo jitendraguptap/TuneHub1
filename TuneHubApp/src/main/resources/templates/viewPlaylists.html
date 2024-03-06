@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Playlist Management</title>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navigation Bar -->
+
+
+<!-- Playlist Table -->
+<div class="container mx-auto mt-8 p-4 bg-white rounded shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Playlist Management</h2>
+
+    <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+        <tr class="bg-gray-200">
+            <th class="py-2 px-4 border-b">Playlist ID</th>
+            <th class="py-2 px-4 border-b">Playlist Name</th>
+            <th class="py-2 px-4 border-b text-left">Playlist Songs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over your playlist data using Thymeleaf -->
+        <tr th:each="pl : ${plist}">
+            <td class="py-2 px-4 border-b text-center" th:text="${pl.id}"></td>
+            <td class="py-2 px-4 border-b text-center" th:text="${pl.name}"></td>
+            <td class="py-2 px-4 border-b">
+                <!-- Iterate over songs in the playlist using Thymeleaf -->
+                <ul>
+                    <li th:each="s : ${pl.songs}" >
+                    <span th:text="${s.name}"></span>
+                    <audio controls>
+                    <source th:src="${s.link}" type="audio/mpeg">
+                    </audio>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

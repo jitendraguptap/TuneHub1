@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto">
+        <br><br>
+        
+        <table class="min-w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="py-2 px-4 border-b">Name</th>
+                    <th class="py-2 px-4 border-b">Artist</th>
+                    <th class="py-2 px-4 border-b">Genre</th>
+                    <th class="py-2 px-4 border-b text-left ">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate over the list of songs using Thymeleaf -->
+                <tr th:each="songslist : ${songslist}">
+                    <td class="py-2 px-8 border-b text-center" th:text="${songslist.name}"></td>
+                    <td class="py-2 px-8 border-b text-center" th:text="${songslist.artist}"></td>
+                    <td class="py-2 px-8 border-b text-center" th:text="${songslist.genre}"></td>
+                    <td class="py-2 px-2 border-b text-center">
+                    <audio controls>
+                        <source th:src="${songslist.link}"  type="audio/mpeg" class="text-center px-8"></audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

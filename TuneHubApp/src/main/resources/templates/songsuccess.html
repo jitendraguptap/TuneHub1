@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music App</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-green-200 to-blue-200 h-screen flex flex-col items-center">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-500 p-4 text-white flex justify-between w-full">
+    <ul class="flex">
+      <li class="mr-6"><a href="/map-songs">Add Songs</a></li>
+      <li class="mr-6"><a href="map-viewsongs">View Songs</a></li>
+      <li class="mr-6"><a href="/createplaylist">Create Playlist</a></li>
+      <li><a href="/viewPlaylists">View Playlist</a></li>
+    </ul>
+    <a href="/map-login" class="text-white">Logout</a>
+  </nav>
+
+  <!-- Success Message with Checkmark Symbol -->
+  <div class="bg-white p-12 rounded-md shadow-md text-center mt-8 mb-8">
+    <a class="text-3xl font-semibold mb-6" href="/map-songs">Add More Songs</a>
+
+    <!-- Success Message with Checkmark Symbol -->
+    <div class="mt-4 flex items-center justify-center text-green-500">
+      <svg class="w-12 h-12 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      Song added successfully!
+    </div>
+  </div>
+
+  <!-- Additional Space Below the Container -->
+  <div class="mb-8"></div>
+
+</body>
+</html>

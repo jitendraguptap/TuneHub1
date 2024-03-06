@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Songs</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-green-200 to-blue-200">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-500 p-4 text-white flex justify-between">
+    <ul class="flex">
+      <li class="mr-6"><a href="/map-songs">Add Songs</a></li>
+      <li class="mr-6"><a href="/map-viewsongs">View Songs</a></li>
+      <li class="mr-6"><a href="/createplaylist">Create Playlist</a></li>
+      <li><a href="/viewPlaylists">View Playlist</a></li>
+    </ul>
+    <a href="/map-login" class="text-white">Logout</a>
+  </nav>
+
+  <!-- Add Songs Form -->
+  <div class="container mx-auto mt-8 max-w-xl"> <!-- Increase width with max-w-xl -->
+    <div class="bg-white p-8 rounded-md shadow-md">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Add Songs</h2>
+
+      <!-- Add Songs Form Fields -->
+      <form action="/addsongs" method="post" class="text-gray-700">
+        <div class="mb-4">
+          <label for="songName" class="block text-sm font-medium">Song Name</label>
+          <input type="text" id="songName" name="name" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="songArtist" class="block text-sm font-medium">Song Artist</label>
+          <input type="text" id="songArtist" name="artist" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="songGenre" class="block text-sm font-medium">Song Genre</label>
+          <input type="text" id="songGenre" name="genre" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+          <label for="songLink" class="block text-sm font-medium">Song Link</label>
+          <input type="text" id="songLink" name="link" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center">
+          <input type="submit" value="ADD SONGS" class="bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

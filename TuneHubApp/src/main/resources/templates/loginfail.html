@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-300">
+
+  <div class="bg-white p-8 rounded-lg shadow-md flex w-96">
+    <form class="w-full">
+      <h2 class="text-2xl font-semibold text-center mb-6 text-black">Invalid Credentials</h2>
+      
+      <!-- Alert symbol -->
+      <div class="flex items-center justify-center bg-red-500 text-white rounded-full w-12 h-12 mb-6 mx-auto">
+        <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12" y2="16"></line>
+        </svg>
+      </div>
+
+      <p class="text-center text-red-500 mb-6">Invalid username or password. Please try again.</p>
+
+      <p class="text-center text-blue-500">
+        <a href="/map-login" class="underline">Click here to login</a>
+      </p>
+    </form>
+  </div>
+
+</body>
+</html>
